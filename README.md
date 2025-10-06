@@ -82,11 +82,18 @@ The site will be available at `http://127.0.0.1:8000/`
 
 ### Building the Site
 
-To build the static site with versioned service worker:
+To build the static site with versioned service worker and PWA manifest:
 
 ```bash
-# Build everything (MkDocs + Service Worker)
+# Build everything (MkDocs + Service Worker + Manifest)
 npm run build
+
+# Or use the Python build script (recommended)
+python build.py
+
+# Or use platform-specific scripts
+build.bat        # Windows
+./build.sh       # Unix/Mac
 
 # Build only MkDocs
 npm run build:mkdocs
@@ -95,18 +102,32 @@ npm run build:mkdocs
 npm run build:sw
 ```
 
-The built site will be in the `site/` directory with a dynamically generated service worker.
+The built site will be in the `site/` directory with:
+- A dynamically generated service worker
+- PWA manifest links added to all HTML pages
+- Theme color meta tags for mobile browsers
 
-### Service Worker Build Process
+### Service Worker & PWA Build Process
 
-The build process automatically generates a versioned service worker with the following features:
+The build process automatically:
 
+1. **Builds the MkDocs site** - Generates static HTML from markdown
+2. **Adds PWA manifest links** - Injects manifest and theme tags into all HTML pages
+3. **Generates service worker** - Creates a versioned SW with caching
+
+#### Service Worker Features:
 - **Dynamic Versioning**: Each build generates a unique cache version
 - **Automatic File Discovery**: Scans the built site for all cacheable files
 - **Smart Caching**: Only caches relevant file types (HTML, CSS, JS, images, fonts)
 - **Cache Management**: Automatically cleans up old cache versions
 - **Offline Support**: Serves cached content when offline
 - **Manifest Integration**: Updates manifest.json with version information
+
+#### PWA Manifest Features:
+- **Auto-linking**: Manifest is automatically linked in all HTML pages
+- **Theme Colors**: Mobile browser theme colors configured
+- **App Icons**: Multiple icon sizes for different devices (192x192, 512x512)
+- **Install Prompt**: Users can install the site as a Progressive Web App
 
 The service worker is generated in `scripts/build-sw.js` and includes:
 - Precaching of all static assets

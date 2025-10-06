@@ -21,7 +21,7 @@
         <link rel="next" href="../permutation-enumeration/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
@@ -59,6 +59,16 @@
     
     
     
+  
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="../../manifest.json">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#3f51b5">
+  <meta name="msapplication-TileColor" content="#3f51b5">
+  <meta name="msapplication-TileImage" content="../../assets/images/icon-192.png">
+
   </head>
   
   
@@ -100,8 +110,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Competitive Programming Guide" class="md-header__button md-logo" aria-label="Competitive Programming Guide" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/images/icon-192.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -478,8 +487,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Competitive Programming Guide" class="md-nav__button md-logo" aria-label="Competitive Programming Guide" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/images/icon-192.png" alt="logo">
 
     </a>
     Competitive Programming Guide
@@ -2238,6 +2246,7 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+  
                   
 
 
@@ -2561,6 +2570,21 @@
 
 
                 
+  
+  <!-- Service Worker Registration -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('../../sw.js')
+        .then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+  </script>
+
               </article>
             </div>
           

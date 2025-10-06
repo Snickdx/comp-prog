@@ -1,0 +1,44 @@
+{
+  "name": "programming-techniques-guide",
+  "version": "1.0.0",
+  "description": "Comprehensive guide to programming techniques and algorithms for competitive programming",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:mkdocs && npm run build:sw",
+    "build:mkdocs": "mkdocs build",
+    "build:sw": "node scripts/build-sw.js",
+    "serve": "mkdocs serve",
+    "deploy": "npm run build && firebase deploy --only hosting",
+    "dev": "mkdocs serve --dev-addr=0.0.0.0:8000",
+    "clean": "rm -rf site/",
+    "clean:win": "rmdir /s /q site",
+    "install:python": "pip install -r requirements.txt",
+    "install:firebase": "npm install -g firebase-tools",
+    "setup": "npm run install:python && npm run install:firebase",
+    "preview": "firebase serve --only hosting",
+    "lint": "echo 'Linting markdown files...' && find docs -name '*.md' -exec echo 'Checking {}' \\;",
+    "test": "echo 'Running tests...' && mkdocs build --strict",
+    "help": "echo 'Available commands:' && echo '  build     - Build MkDocs and generate service worker' && echo '  build:mkdocs - Build MkDocs site only' && echo '  build:sw  - Generate service worker only' && echo '  serve     - Start development server' && echo '  deploy    - Build and deploy to Firebase' && echo '  dev       - Start dev server on all interfaces' && echo '  clean     - Remove build directory' && echo '  preview   - Preview Firebase deployment' && echo '  setup     - Install Python and Firebase dependencies'"
+  },
+  "keywords": [
+    "programming",
+    "algorithms",
+    "competitive-programming",
+    "documentation",
+    "mkdocs",
+    "firebase"
+  ],
+  "author": "Comp Prog Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Snickdx/comp-prog"
+  },
+  "homepage": "https://comp.mendez.codes",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

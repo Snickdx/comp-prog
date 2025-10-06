@@ -46,8 +46,24 @@ theme:
     - content.code.copy
     - content.code.annotate
 
+  # PWA Configuration
+  manifest:
+    name: Programming Techniques Guide
+    short_name: Tech Guide
+    description: Comprehensive guide to programming techniques and algorithms
+    start_url: /
+    display: standalone
+    background_color: "#ffffff"
+    theme_color: "#3f51b5"
+    orientation: portrait-primary
+    lang: en
+    dir: ltr
+    scope: /
+    prefer_related_applications: false
+
   icon:
     repo: fontawesome/brands/github
+    favicon: assets/images/favicon.ico
 
 
 

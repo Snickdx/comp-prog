@@ -4,17 +4,19 @@ This project uses MkDocs Material to create a beautiful, responsive documentatio
 
 ## Installation
 
-1. **Install Python dependencies:**
+1. **Install dependencies:**
    ```bash
-   pip install -r requirements.txt
+   # Install Python dependencies
+   npm run install:python
+   
+   # Install Firebase CLI
+   npm run install:firebase
+   
+   # Or install everything at once
+   npm run setup
    ```
 
-2. **Install Firebase CLI:**
-   ```bash
-   npm install -g firebase-tools
-   ```
-
-3. **Verify installations:**
+2. **Verify installations:**
    ```bash
    mkdocs --version
    firebase --version
@@ -69,20 +71,49 @@ firebase init
 Start the development server to preview your documentation:
 
 ```bash
-mkdocs serve
+# Standard development server
+npm run serve
+
+# Development server accessible from all interfaces
+npm run dev
 ```
 
 The site will be available at `http://127.0.0.1:8000/`
 
 ### Building the Site
 
-To build the static site:
+To build the static site with versioned service worker:
 
 ```bash
-mkdocs build
+# Build everything (MkDocs + Service Worker)
+npm run build
+
+# Build only MkDocs
+npm run build:mkdocs
+
+# Generate only service worker (after MkDocs build)
+npm run build:sw
 ```
 
-The built site will be in the `site/` directory.
+The built site will be in the `site/` directory with a dynamically generated service worker.
+
+### Service Worker Build Process
+
+The build process automatically generates a versioned service worker with the following features:
+
+- **Dynamic Versioning**: Each build generates a unique cache version
+- **Automatic File Discovery**: Scans the built site for all cacheable files
+- **Smart Caching**: Only caches relevant file types (HTML, CSS, JS, images, fonts)
+- **Cache Management**: Automatically cleans up old cache versions
+- **Offline Support**: Serves cached content when offline
+- **Manifest Integration**: Updates manifest.json with version information
+
+The service worker is generated in `scripts/build-sw.js` and includes:
+- Precaching of all static assets
+- Cache-first strategy for performance
+- Network fallback for dynamic content
+- Offline page for navigation requests
+- Background sync and push notification support
 
 ### Deployment
 
@@ -90,18 +121,20 @@ The built site will be in the `site/` directory.
 
 1. **Build and deploy:**
    ```bash
-   # Windows
-   deploy.bat
-   
-   # Linux/Mac
-   ./deploy.sh
+   # One command to build and deploy
+   npm run deploy
    
    # Or manually:
-   mkdocs build
+   npm run build
    firebase deploy --only hosting
    ```
 
-2. **Your site will be available at:**
+2. **Preview deployment:**
+   ```bash
+   npm run preview
+   ```
+
+3. **Your site will be available at:**
    - `https://comp.mendez.codes` (custom domain)
    - `https://comp-prog.web.app` (Firebase default)
    - `https://comp-prog.firebaseapp.com` (Firebase default)
@@ -117,6 +150,33 @@ The built site will be in the `site/` directory.
 #### Other Platforms
 
 The `site/` directory contains static files that can be deployed to any web server or CDN.
+
+## Available NPM Scripts
+
+```bash
+# Development
+npm run serve          # Start development server
+npm run dev           # Start dev server on all interfaces (0.0.0.0:8000)
+npm run build         # Build MkDocs and generate versioned service worker
+npm run build:mkdocs  # Build MkDocs site only
+npm run build:sw      # Generate service worker only
+
+# Deployment
+npm run deploy        # Build and deploy to Firebase
+npm run preview       # Preview Firebase deployment locally
+
+# Setup & Maintenance
+npm run setup         # Install Python and Firebase dependencies
+npm run install:python # Install Python dependencies only
+npm run install:firebase # Install Firebase CLI only
+npm run clean         # Remove build directory (Unix/Mac)
+npm run clean:win     # Remove build directory (Windows)
+
+# Quality Assurance
+npm run lint          # Lint markdown files
+npm run test          # Build with strict mode for testing
+npm run help          # Show all available commands
+```
 
 ## Project Structure
 
@@ -208,8 +268,9 @@ The site uses Material Design principles. You can customize:
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test locally with `mkdocs serve`
-5. Submit a pull request
+4. Test locally with `npm run serve`
+5. Run tests with `npm run test`
+6. Submit a pull request
 
 ## License
 

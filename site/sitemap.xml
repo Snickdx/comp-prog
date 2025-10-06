@@ -2,66 +2,158 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://comp.mendez.codes/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/brute-force/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/brute-force/boolean-counter/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/brute-force/meet-in-middle/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/brute-force/permutation-enumeration/</loc>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/brute-force/recursive-backtracking/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/counting/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/counting/frequency-arrays/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/counting/prefix-arrays/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/counting/sieve-eratosthenes/</loc>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/data-structures/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/data-structures/disjoint-set/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/data-structures/heap-priority-queue/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/data-structures/segment-tree-bit/</loc>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/dynamic-programming/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/dynamic-programming/bitmask-dp/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/dynamic-programming/dp-trees-graphs/</loc>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/dynamic-programming/top-down-bottom-up/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/geometry/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/geometry/convex-hull/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/geometry/sweep-line/</loc>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/graph-modeling/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/graph-modeling/dfs-bfs/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/graph-modeling/dijkstra-bellman-ford/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/graph-modeling/union-find/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/math/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/math/combinatorics-counting/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/math/geometric-formulas/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/math/linear-algebra/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/math/number-theory/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/math/trigonometry/</loc>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/simulation/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/simulation/binary-search-answer/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/simulation/greedy-algorithms/</loc>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/simulation/two-pointer-sliding-window/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
     </url>
     <url>
          <loc>https://comp.mendez.codes/string-bitwise/</loc>
-         <lastmod>2025-10-05</lastmod>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/string-bitwise/bitmask-tricks/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/string-bitwise/kmp-z-algorithm/</loc>
+         <lastmod>2025-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://comp.mendez.codes/string-bitwise/trie-aho-corasick/</loc>
+         <lastmod>2025-10-06</lastmod>
     </url>
 </urlset>

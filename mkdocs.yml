@@ -1,0 +1,140 @@
+site_name: Competitive Programming Guide
+site_description: A comprehensive guide to competitive programming techniques and algorithms
+site_author: Comp Prog Team
+site_url: https://comp.mendez.codes
+
+repo_name: comp-prog
+repo_url: https://github.com/Snickdx/comp-prog
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+
+  icon:
+    repo: fontawesome/brands/github
+
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+
+nav:
+  - Home: index.md
+  - Brute Force:
+    - Overview: brute-force/index.md
+    - Boolean Counter: brute-force/boolean-counter.md
+    - Recursive Backtracking: brute-force/recursive-backtracking.md
+    - Meet-in-the-Middle: brute-force/meet-in-middle.md
+    - Permutation Enumeration: brute-force/permutation-enumeration.md
+  - Counting:
+    - Overview: counting/index.md
+    - Frequency Arrays: counting/frequency-arrays.md
+    - Prefix Arrays: counting/prefix-arrays.md
+    - Sieve of Eratosthenes: counting/sieve-eratosthenes.md
+  - Dynamic Programming:
+    - Overview: dynamic-programming/index.md
+    - Top-Down & Bottom-Up: dynamic-programming/top-down-bottom-up.md
+    - Bitmask DP: dynamic-programming/bitmask-dp.md
+    - DP on Trees / Graphs: dynamic-programming/dp-trees-graphs.md
+  - Graph Theory:
+    - Overview: graph-modeling/index.md
+    - DFS / BFS: graph-modeling/dfs-bfs.md
+    - Dijkstra / Bellman-Ford: graph-modeling/dijkstra-bellman-ford.md
+    - Union-Find: graph-modeling/union-find.md
+  - Geometry:
+    - Overview: geometry/index.md
+    - Sweep Line: geometry/sweep-line.md
+    - Convex Hull: geometry/convex-hull.md
+  - String & Bitwise:
+    - Overview: string-bitwise/index.md
+    - KMP / Z Algorithm: string-bitwise/kmp-z-algorithm.md
+    - Trie / Aho-Corasick: string-bitwise/trie-aho-corasick.md
+    - Bitmask Tricks: string-bitwise/bitmask-tricks.md
+  - Simulation:
+    - Overview: simulation/index.md
+    - Two Pointer / Sliding Window: simulation/two-pointer-sliding-window.md
+    - Binary Search on Answer: simulation/binary-search-answer.md
+    - Greedy Algorithms: simulation/greedy-algorithms.md
+  - Data Structures:
+    - Overview: data-structures/index.md
+    - Segment Tree / BIT: data-structures/segment-tree-bit.md
+    - Heap / Priority Queue: data-structures/heap-priority-queue.md
+    - Disjoint Set (DSU): data-structures/disjoint-set.md
+  - Math:
+    - Overview: math/index.md
+    - Geometric Formulas: math/geometric-formulas.md
+    - Combinatorics & Counting: math/combinatorics-counting.md
+    - Number Theory: math/number-theory.md
+    - Trigonometry: math/trigonometry.md
+    - Linear Algebra: math/linear-algebra.md

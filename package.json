@@ -4,8 +4,9 @@
   "description": "Comprehensive guide to programming techniques and algorithms for competitive programming",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:mkdocs && npm run build:sw",
+    "build": "npm run build:mkdocs && npm run copy:files && npm run build:sw",
     "build:mkdocs": "mkdocs build",
+    "copy:files": "node scripts/copy-files.js",
     "build:sw": "node scripts/build-sw.js",
     "serve": "mkdocs serve",
     "deploy": "npm run build && firebase deploy --only hosting",
@@ -18,7 +19,7 @@
     "preview": "firebase serve --only hosting",
     "lint": "echo 'Linting markdown files...' && find docs -name '*.md' -exec echo 'Checking {}' \\;",
     "test": "echo 'Running tests...' && mkdocs build --strict",
-    "help": "echo 'Available commands:' && echo '  build     - Build MkDocs and generate service worker' && echo '  build:mkdocs - Build MkDocs site only' && echo '  build:sw  - Generate service worker only' && echo '  serve     - Start development server' && echo '  deploy    - Build and deploy to Firebase' && echo '  dev       - Start dev server on all interfaces' && echo '  clean     - Remove build directory' && echo '  preview   - Preview Firebase deployment' && echo '  setup     - Install Python and Firebase dependencies'"
+    "help": "echo 'Available commands:' && echo '  build     - Build MkDocs, copy files, and generate service worker' && echo '  build:mkdocs - Build MkDocs site only' && echo '  copy:files - Copy manifest.json and offline.html to site' && echo '  build:sw  - Generate service worker only' && echo '  serve     - Start development server' && echo '  deploy    - Build and deploy to Firebase' && echo '  dev       - Start dev server on all interfaces' && echo '  clean     - Remove build directory' && echo '  preview   - Preview Firebase deployment' && echo '  setup     - Install Python and Firebase dependencies'"
   },
   "keywords": [
     "programming",

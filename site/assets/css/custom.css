@@ -1,0 +1,166 @@
+/* Custom CSS for Programming Techniques Guide */
+
+/* Custom variables */
+:root {
+  --custom-primary: #3f51b5;
+  --custom-secondary: #303f9f;
+  --custom-accent: #ff4081;
+  --custom-success: #4caf50;
+  --custom-warning: #ff9800;
+  --custom-error: #f44336;
+}
+
+/* Custom code block styling */
+.highlight {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.highlight pre {
+  padding: 1.5rem;
+  margin: 0;
+}
+
+/* Custom button styling */
+.custom-button {
+  background: var(--custom-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background: var(--custom-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom card styling */
+.custom-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  border-left: 4px solid var(--custom-primary);
+}
+
+/* Custom table styling */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-table th {
+  background: var(--custom-primary);
+  color: white;
+  font-weight: 500;
+}
+
+.custom-table tr:hover {
+  background: rgba(63, 81, 181, 0.05);
+}
+
+/* Custom alert boxes */
+.custom-alert {
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  border-left: 4px solid;
+}
+
+.custom-alert.success {
+  background: rgba(76, 175, 80, 0.1);
+  border-color: var(--custom-success);
+  color: #2e7d32;
+}
+
+.custom-alert.warning {
+  background: rgba(255, 152, 0, 0.1);
+  border-color: var(--custom-warning);
+  color: #ef6c00;
+}
+
+.custom-alert.error {
+  background: rgba(244, 67, 54, 0.1);
+  border-color: var(--custom-error);
+  color: #c62828;
+}
+
+.custom-alert.info {
+  background: rgba(63, 81, 181, 0.1);
+  border-color: var(--custom-primary);
+  color: #1a237e;
+}
+
+/* Custom typography */
+.custom-heading {
+  color: var(--custom-primary);
+  font-weight: 500;
+  margin: 2rem 0 1rem 0;
+}
+
+.custom-text {
+  line-height: 1.6;
+  color: #424242;
+}
+
+/* Custom spacing utilities */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+
+/* Dark mode support */
+[data-md-color-scheme="slate"] .custom-card {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+[data-md-color-scheme="slate"] .custom-table th {
+  background: var(--custom-primary);
+}
+
+[data-md-color-scheme="slate"] .custom-text {
+  color: #e0e0e0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .custom-card {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .custom-table {
+    font-size: 0.9rem;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 0.5rem;
+  }
+}

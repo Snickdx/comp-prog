@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Programming Techniques Guide</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        :root {
+            --md-primary: #3f51b5;
+            --md-primary-dark: #303f9f;
+            --md-accent: #3f51b5;
+            --md-accent-rgb: 63, 81, 181;
+            --md-primary-rgb: 63, 81, 181;
+            --md-primary-fg: #fff;
+            --md-primary-fg-rgb: 255, 255, 255;
+            --md-primary-bg: #fff;
+            --md-primary-bg-rgb: 255, 255, 255;
+            --md-accent-fg: #fff;
+            --md-accent-fg-rgb: 255, 255, 255;
+            --md-accent-bg: #fff;
+            --md-accent-bg-rgb: 255, 255, 255;
+        }
+
+        [data-md-color-scheme="slate"] {
+            --md-primary: #3f51b5;
+            --md-primary-dark: #303f9f;
+            --md-accent: #3f51b5;
+            --md-accent-rgb: 63, 81, 181;
+            --md-primary-rgb: 63, 81, 181;
+            --md-primary-fg: #fff;
+            --md-primary-fg-rgb: 255, 255, 255;
+            --md-primary-bg: #1e1e1e;
+            --md-primary-bg-rgb: 30, 30, 30;
+            --md-accent-fg: #fff;
+            --md-accent-fg-rgb: 255, 255, 255;
+            --md-accent-bg: #1e1e1e;
+            --md-accent-bg-rgb: 30, 30, 30;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--md-primary-bg);
+            color: var(--md-primary-fg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.25s, color 0.25s;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            background: var(--md-primary-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--md-primary);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            color: var(--md-primary-fg);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            line-height: 1.6;
+            color: var(--md-primary-fg);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--md-primary);
+            color: var(--md-primary-fg);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--md-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            margin-top: 3rem;
+            text-align: left;
+            background: rgba(var(--md-primary-rgb), 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(var(--md-primary-rgb), 0.1);
+        }
+
+        .features h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--md-primary);
+            font-weight: 500;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(var(--md-primary-rgb), 0.1);
+            color: var(--md-primary-fg);
+            font-size: 1rem;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li:before {
+            content: "✓ ";
+            color: var(--md-primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(var(--md-primary-rgb), 0.1);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--md-primary-fg);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #ff9800;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1e1e1e;
+                color: #fff;
+            }
+            
+            .container {
+                background: #1e1e1e;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <span class="material-icons" style="font-size: 4rem;">offline_bolt</span>
+        </div>
+        <h1>You're Offline</h1>
+        <p>Don't worry! This guide is available offline. You can still access all the cached content and continue learning.</p>
+        
+        <a href="/" class="btn">
+            <span class="material-icons" style="font-size: 1.2rem; vertical-align: middle; margin-right: 0.5rem;">home</span>
+            Go to Homepage
+        </a>
+        
+        <div class="features">
+            <h3>
+                <span class="material-icons" style="font-size: 1.5rem; vertical-align: middle; margin-right: 0.5rem;">offline_pin</span>
+                Available Offline
+            </h3>
+            <ul>
+                <li>All technique pages and examples</li>
+                <li>Mathematical formulas and references</li>
+                <li>Code samples and implementations</li>
+                <li>Search functionality (cached results)</li>
+                <li>Navigation and browsing</li>
+            </ul>
+        </div>
+
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>Checking connection...</span>
+        </div>
+    </div>
+
+    <script>
+        // Check if we're back online
+        function updateConnectionStatus() {
+            const statusIndicator = document.querySelector('.status-indicator');
+            const statusDot = document.querySelector('.status-dot');
+            const statusText = statusIndicator.querySelector('span');
+            
+            if (navigator.onLine) {
+                statusDot.style.background = '#4CAF50';
+                statusText.textContent = 'Connection restored!';
+                
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
+            } else {
+                statusDot.style.background = '#ff9800';
+                statusText.textContent = 'Still offline';
+            }
+        }
+
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+        
+        // Initial status check
+        updateConnectionStatus();
+    </script>
+</body>
+</html>

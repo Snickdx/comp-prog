@@ -4,8 +4,10 @@ const crypto = require('crypto');
 
 // Configuration
 const SITE_DIR = 'site';
+const DOCS_DIR = 'docs';
 const SW_OUTPUT_FILE = path.join(SITE_DIR, 'sw.js');
 const MANIFEST_FILE = path.join(SITE_DIR, 'manifest.json');
+const DOCS_MANIFEST_FILE = path.join(DOCS_DIR, 'manifest.json');
 
 // Generate version based on timestamp and content hash
 function generateVersion() {
@@ -187,13 +189,22 @@ function buildServiceWorker() {
   fs.writeFileSync(SW_OUTPUT_FILE, swContent);
   console.log(`✅ Service Worker generated: ${SW_OUTPUT_FILE}`);
   
-  // Update manifest.json with new version info
+  // Update manifest.json with new version info (both in site and docs)
   if (fs.existsSync(MANIFEST_FILE)) {
     const manifest = JSON.parse(fs.readFileSync(MANIFEST_FILE, 'utf8'));
     manifest.version = version;
     manifest.version_name = version;
     fs.writeFileSync(MANIFEST_FILE, JSON.stringify(manifest, null, 2));
-    console.log(`📋 Updated manifest.json with version: ${version}`);
+    console.log(`📋 Updated site manifest.json with version: ${version}`);
+  }
+  
+  // Also update the docs manifest.json
+  if (fs.existsSync(DOCS_MANIFEST_FILE)) {
+    const manifest = JSON.parse(fs.readFileSync(DOCS_MANIFEST_FILE, 'utf8'));
+    manifest.version = version;
+    manifest.version_name = version;
+    fs.writeFileSync(DOCS_MANIFEST_FILE, JSON.stringify(manifest, null, 2));
+    console.log(`📋 Updated docs manifest.json with version: ${version}`);
   }
   
   console.log('🎉 Service Worker build complete!');

@@ -1,0 +1,100 @@
+/* Theme-specific CSS overrides */
+
+/* Material Design theme enhancements */
+.md-header {
+  background: linear-gradient(135deg, #3f51b5 0%, #303f9f 100%);
+}
+
+.md-header__button {
+  color: white !important;
+}
+
+.md-header__button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation enhancements */
+.md-nav__item--active > .md-nav__link {
+  color: #3f51b5;
+  font-weight: 500;
+}
+
+.md-nav__link:hover {
+  color: #303f9f;
+}
+
+/* Code block enhancements */
+.highlight .c1 { color: #6a737d; } /* Comments */
+.highlight .k { color: #d73a49; }  /* Keywords */
+.highlight .s { color: #032f62; }  /* Strings */
+.highlight .n { color: #6f42c1; }  /* Names */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f51b5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #303f9f;
+}
+
+/* Dark mode scrollbar */
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+  background: #3f51b5;
+}
+
+/* Search enhancements */
+.md-search__form {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.md-search__input {
+  color: white;
+}
+
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Footer enhancements */
+.md-footer {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.md-footer-meta {
+  background: #121212;
+}
+
+/* Print styles */
+@media print {
+  .md-header,
+  .md-footer,
+  .md-sidebar {
+    display: none;
+  }
+  
+  .md-content {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .highlight {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

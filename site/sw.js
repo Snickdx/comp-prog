@@ -1,7 +1,15 @@
-const CACHE_NAME = 'tech-guide-vmges92om-avptnk';
+const CACHE_NAME = 'tech-guide-vmgestecm-yd5c73';
 const STATIC_CACHE_URLS = [
   "/404.html",
+  "/assets/css/custom.css",
+  "/assets/css/themes.css",
+  "/assets/images/apple-touch-icon.png",
+  "/assets/images/favicon.ico",
   "/assets/images/favicon.png",
+  "/assets/images/icon-192-maskable.png",
+  "/assets/images/icon-192.png",
+  "/assets/images/icon-512-maskable.png",
+  "/assets/images/icon-512.png",
   "/assets/javascripts/bundle.f55a23d4.min.js",
   "/assets/javascripts/lunr/min/lunr.ar.min.js",
   "/assets/javascripts/lunr/min/lunr.da.min.js",
@@ -38,6 +46,8 @@ const STATIC_CACHE_URLS = [
   "/assets/javascripts/lunr/tinyseg.js",
   "/assets/javascripts/lunr/wordcut.js",
   "/assets/javascripts/workers/search.973d3a69.min.js",
+  "/assets/js/analytics.js",
+  "/assets/js/custom.js",
   "/assets/stylesheets/main.2a3383ac.min.css",
   "/assets/stylesheets/palette.06af60db.min.css",
   "/brute-force/boolean-counter/index.html",
@@ -65,12 +75,14 @@ const STATIC_CACHE_URLS = [
   "/graph-modeling/index.html",
   "/graph-modeling/union-find/index.html",
   "/index.html",
+  "/manifest.json",
   "/math/combinatorics-counting/index.html",
   "/math/geometric-formulas/index.html",
   "/math/index.html",
   "/math/linear-algebra/index.html",
   "/math/number-theory/index.html",
   "/math/trigonometry/index.html",
+  "/offline.html",
   "/overrides/main.html",
   "/search/search_index.json",
   "/simulation/binary-search-answer/index.html",
@@ -85,11 +97,11 @@ const STATIC_CACHE_URLS = [
 
 // Install event - cache static resources
 self.addEventListener('install', event => {
-  console.log('Service Worker: Installing version vmges92om-avptnk...');
+  console.log('Service Worker: Installing version vmgestecm-yd5c73...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Service Worker: Caching 81 static resources');
+        console.log('Service Worker: Caching 93 static resources');
         return cache.addAll(STATIC_CACHE_URLS);
       })
       .then(() => {
@@ -104,7 +116,7 @@ self.addEventListener('install', event => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', event => {
-  console.log('Service Worker: Activating version vmges92om-avptnk...');
+  console.log('Service Worker: Activating version vmgestecm-yd5c73...');
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
@@ -195,6 +207,6 @@ self.addEventListener('notificationclick', event => {
   );
 });
 
-// Service Worker version: vmges92om-avptnk
-// Generated on: 2025-10-06T07:01:46.616Z
-// Cached files: 81
+// Service Worker version: vmgestecm-yd5c73
+// Generated on: 2025-10-06T07:17:34.872Z
+// Cached files: 93
